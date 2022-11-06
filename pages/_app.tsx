@@ -5,7 +5,13 @@ import { QueryClientProvider, QueryClient } from "react-query";
 
 import Header from "../components/header/Header";
 
-const reactQueryClient = new QueryClient();
+const reactQueryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
