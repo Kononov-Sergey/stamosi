@@ -33,7 +33,7 @@ const Home: NextPage = () => {
       <button type="button" onClick={() => refetch()}>
         click me
       </button>
-      <h1>{data && data.toString()}</h1>
+      <h1>{data && data.Code_List.Code_Search.text}</h1>
     </main>
   );
 };

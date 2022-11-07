@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import convert from "xml-js";
-
 import { FromStock } from "../../../app/services/Mikado";
+import { MikadoCodeSearchRes } from "../../../types/api/mikado";
 
 export const BASE_MIKADO_URL = "https://mikado-parts.ru/ws1/service.asmx";
 
@@ -34,8 +34,8 @@ export default async (req: ExtendedNextApiRequest, res: NextApiResponse) => {
       ignoreAttributes: true,
       ignoreDeclaration: true,
       textKey: "text",
-    });
+    }) as MikadoCodeSearchRes;
 
-    res.json({ data: jsData });
+    res.json(jsData);
   }
 };

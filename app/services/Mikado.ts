@@ -1,4 +1,5 @@
-import MIKADO_URLS from "../../pages/api/mikado/_urls";
+import MIKADO_URLS from "../../pages/api/mikado";
+import { MikadoCodeSearchRes } from "../../types/api/mikado";
 
 export enum FromStock {
   FROM_STOCK_ONLY = "FromStockOnly",
@@ -17,7 +18,8 @@ const MikadoService = {
       body: JSON.stringify(body),
     });
     const data = await res.json();
-    return data;
+    console.dir(data);
+    return data as MikadoCodeSearchRes;
   },
 };
 
